@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake_running</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(162, 180, 196);
+            display: grid;
+            place-content: center;
+        }
+
+        .cradle {
+            width: 300px;
+            height: 200px;
+            border-top: 22px solid aquamarine;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 46px;
+        }
+        .line {
+            width: 5px;
+            aspect-ratio: 1;
+            background-color: aquamarine;
+            border-radius: 6px;
+            position: relative;
+            
+        }
+        .line::before{
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: coral;
+            position: absolute;
+            border-radius: 50%;
+            bottom: -25px;
+            left: -22px;
+        }
+        .line:first-child {
+            animation: left-swing 2s linear infinite;
+            transform-origin: top left;
+        }
+        @keyframes left-swing {
+            0%{
+                rotate: 0deg;
+            }
+            25%{
+                rotate:20deg;
+            }
+            50%{
+                rotate: 0deg;
+            }
+            100%{
+                rotate:0deg;
+            }
+        }
+        .line:last-child {
+            animation: right-swing 2s linear 1s infinite;
+            transform-origin: top left;
+        }
+        @keyframes right-swing {
+            0%{
+                rotate: 0deg;
+            }
+            25%{
+                rotate:-20deg;
+            }
+            50%{
+                rotate: 0deg;
+            }
+            100%{
+                rotate:0deg;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cradle">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</body>
+
+</html>
